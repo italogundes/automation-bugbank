@@ -1,12 +1,12 @@
 # Automação de Testes com Cypress para a plataforma BugBank
 
-Repositório contém testes automatizados para a plataforma Bugbank, criados em Cypress.
+Repositório contém testes automatizados para a plataforma Bugbank, criados com Cypress.
 
 O Bugbank é uma aplicação que simula um banco digital.
 
-Os testes tem como objetivo garantir que as funcionalidades estejam funcionando corretamente, seja em casos de sucesso ou falha.
+Os testes tem como objetivo garantir que as funcionalidades estejam funcionando corretamente, seja em casos de sucesso ou de falha.
 
-Toda a documentação dos testes foi realizada utilizando a ferramenta Qase.io
+Toda a documentação dos testes foi realizada utilizando a ferramenta [Qase.io](https://qase.io/)
 
 # Índice
 
@@ -14,6 +14,7 @@ Toda a documentação dos testes foi realizada utilizando a ferramenta Qase.io
 - [Funcionaidades Testadas](#funcionalidades-testadas)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Observações](#observacoes)
+- [Execução dos Testes](#execução-dos-testes)
 
 ## Descrição do Projeto
 
@@ -36,3 +37,19 @@ BugBank é uma aplicação de banco digital que simula operações bancárias co
 ## Observações
 
 O Bugbank é uma alicação que ainda está em desenvolvimento, logo, nem todas as funcionalidades estão finalizadas. O repositório do projeto no git está [aqui](https://github.com/jhonatasmatos/bugbank-ui)
+
+## Execução dos Testes
+
+Para rodar os testes automatizados na sua máquina, siga os seguintes passos:
+
+1 - Faça o clone do projeto
+
+`git clone` https://github.com/italogundes/automation-bugbank.git
+
+2 - Dentro do repositório local, instale as dependências do node
+
+`npm install`
+
+3 - Execute o Cypress para executar os testes no navegador
+
+`npx cypress open`
