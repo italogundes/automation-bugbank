@@ -10,10 +10,10 @@ Toda a documentação dos testes foi realizada utilizando a ferramenta Qase.io
 
 # Índice
 
-- [Descrição do Projeto](#descricao-do-projeto)
+- [Descrição do Projeto](#descrição-do-projeto)
 - [Funcionaidades Testadas](#funcionalidades-testadas)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Observações](#observacoes)
+- [Observações](#observações)
 
 ## Descrição do Projeto
 
