@@ -9,3 +9,12 @@ Os testes tem como objetivo garantir que as funcionalidades estejam funcionando 
 Toda a documentação dos testes foi realizada utilizando a ferramenta Qase.io
 
 # Índice
+
+- [Descrição do Projeto](#descricao-do-projeto)
+- [Funcionaidades Testadas]
+- [Tecnologias Utilizadas]
+- [Observações]
+
+## Descrição do Projeto
+
+BugBank é uma aplicação de banco digital que simula operações bancárias como login, cadastro de contas, transferências, extratos, pagamentos e saques. Este projeto visa criar testes automatizados para garantir que as principais funcionalidades funcionem corretamente.
