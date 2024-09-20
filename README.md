@@ -13,7 +13,7 @@ Toda a documentação dos testes foi realizada utilizando a ferramenta Qase.io
 - [Descrição do Projeto](#descricao-do-projeto)
 - [Funcionaidades Testadas](#funcionalidades-testadas)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Observações]
+- [Observações](#observacoes)
 
 ## Descrição do Projeto
 
@@ -32,3 +32,7 @@ BugBank é uma aplicação de banco digital que simula operações bancárias co
 - [![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)](https://www.cypress.io/) Framework para automação de testes e2e.
 - [![VSCode](https://img.shields.io/badge/VSCode-0078d7?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/) IDE para desenvolvimento.
 - [![Qase](https://img.shields.io/badge/Qase.io-14A856?style=for-the-badge&logo=qase&logoColor=white)](https://qase.io/) Ferramenta para planejamento e gerenciamento dos testes
+
+## Observações
+
+O Bugbank é uma alicação que ainda está em desenvolvimento, logo, nem todas as funcionalidades estão finalizadas. O repositório do projeto no git está [aqui](https://github.com/jhonatasmatos/bugbank-ui)
