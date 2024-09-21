@@ -36,7 +36,9 @@ BugBank é uma aplicação de banco digital que simula operações bancárias co
 
 ## Observações
 
-O Bugbank é uma aplicação que ainda está em desenvolvimento, logo, nem todas as funcionalidades estão finalizadas. O repositório do projeto no git está [aqui](https://github.com/jhonatasmatos/bugbank-ui)
+O Bugbank é uma aplicação que ainda está em desenvolvimento, logo, nem todas as funcionalidades estão finalizadas. 
+A aplicação não conta com um banco de dados, todas as informações geradas ficam salvas no localStorage do navegador.
+O repositório do projeto no git está [aqui](https://github.com/jhonatasmatos/bugbank-ui)
 
 ## Execução dos Testes
 
