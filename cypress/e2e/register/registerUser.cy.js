@@ -15,7 +15,7 @@ describe('Registro de usuário', () => {
     cy.get('@btnRegister').click();
   });
 
-  it('Registro de usuário com sucesso', () => {
+  it.only('Registro de usuário com sucesso', () => {
     inputsForm
       .email()
       .type('testeuser@teste.com', { force: true })
