@@ -29,7 +29,7 @@ describe('Transferência entre contas', () => {
     cy.get('input[name="email"]').first().type('italo.gundes@gmail.com');
     cy.get('input[name="password"]').first().type('im159');
 
-    cy.get('button').contains('Acessar').click();
+    cy.contains('button', 'Acessar').click();
 
     cy.url().should('include', '/home');
   });
@@ -49,6 +49,32 @@ describe('Transferência entre contas', () => {
       .type('Internet')
       .should('have.value', 'Internet');
 
-    cy.get('button').contains('Transferir').click();
+    cy.contains('button', 'Transferir agora').dblclick();
+
+    cy.get('.styles__ContainerContent-sc-8zteav-1')
+      .should('be.visible')
+      .contains('Transferencia realizada com sucesso');
+  });
+
+  it('Trasnferência com valor inválido', () => {
+    cy.get('#btn-TRANSFERÊNCIA').click();
+
+    cy.url().should('include', '/transfer');
+    cy.get('form').should('be.visible');
+
+    cy.get('input[name="accountNumber"]')
+      .type('426')
+      .should('have.value', '426');
+    cy.get('input[name="digit"]').type('6').should('have.value', '6');
+    cy.get('input[name="transferValue"]').type(-10).should('have.value', -10);
+    cy.get('input[name="description"]')
+      .type('Internet')
+      .should('have.value', 'Internet');
+
+    cy.contains('button', 'Transferir agora').dblclick();
+
+    cy.get('.styles__ContainerContent-sc-8zteav-1')
+      .should('be.visible')
+      .contains('Valor da transferência não pode ser 0 ou negativo');
   });
 });
