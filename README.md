@@ -7,6 +7,7 @@ O Bugbank é uma aplicação que simula um banco digital.
 Os testes tem como objetivo garantir que as funcionalidades estejam funcionando corretamente, seja em casos de sucesso ou de falha.
 
 Toda a documentação dos testes foi realizada utilizando a ferramenta [Qase.io](https://qase.io/)
+![Documentação Qase](assets/gif_quase_bugbank.gif)
 
 # Índice
 
@@ -36,7 +37,7 @@ BugBank é uma aplicação de banco digital que simula operações bancárias co
 
 ## Observações
 
-O Bugbank é uma aplicação que ainda está em desenvolvimento, logo, nem todas as funcionalidades estão finalizadas. 
+O Bugbank é uma aplicação que ainda está em desenvolvimento, logo, nem todas as funcionalidades estão finalizadas.
 A aplicação não conta com um banco de dados, todas as informações geradas ficam salvas no localStorage do navegador.
 O repositório do projeto no git está [aqui](https://github.com/jhonatasmatos/bugbank-ui)
 
