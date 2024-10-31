@@ -1,14 +1,15 @@
+# Nome da Action
 name: End-to-End Tests
-on: [push]
+on: [push] # Nesse caso, a ação será exectada quando um push for feito no repositório, também é possível informar em quais branches serão aplicadas
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests
-        run: npm test
+  test: # Nome da Job (ex.: build, test, deploy e etc...)
+    runs-on: ubuntu-22.04 # O ambiente em que o job será executado (Ubuntu, Windows, MacOS)
+    steps: # Define os passos (steps) da pipeline
+      - name: Checkout # Geralmente a primeira step é o checkout do repositório
+        uses: actions/checkout@v4 # O uses permite utilizar ações já existentes, nesse exeplo é feito o clone do projeto
+
+      - name: Install dependencies # Nome da Step
+        run: npm install # Ação que instala as dependências do node
+
+      - name: Run tests # Nome da Step
+        run: npm test # Ação que executa os scripts de testes
