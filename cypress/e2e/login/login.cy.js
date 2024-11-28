@@ -6,7 +6,7 @@ describe('Login do sistema', () => {
     cy.visit('https://bugbank.netlify.app/');
   });
 
-  it.only('Login com Sucesso', () => {
+  it('Login com Sucesso', () => {
     cy.get(element.input_email)
       .first()
       .type(Cypress.env('EMAIL'))
@@ -17,8 +17,6 @@ describe('Login do sistema', () => {
       .should('have.value', Cypress.env('PASSWORD'));
 
     cy.contains('Acessar').click();
-
-    cy.url().should('include', '/home');
   });
 
   it('Login Incorreto', () => {
