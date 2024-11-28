@@ -1,33 +1,33 @@
 /// <reference types="Cypress" />
-
-const inputsForm = {
-  email: () => cy.get('input[name="email"]').first(),
-  password: () => cy.get('input[name="password"]').first(),
-};
+const element = require('../../fixtures/login.json');
 
 describe('Login do sistema', () => {
   beforeEach(() => {
     cy.visit('https://bugbank.netlify.app/');
   });
 
-  it('Login com Sucesso', () => {
-    inputsForm
-      .email()
-      .type('testeuser@teste.com')
-      .should('have.value', 'testeuser@teste.com');
-    inputsForm.password().type('1234').should('have.value', '1234');
+  it.only('Login com Sucesso', () => {
+    cy.get(element.input_email)
+      .first()
+      .type(Cypress.env('EMAIL'))
+      .should('have.value', Cypress.env('EMAIL'));
+    cy.get(element.input_password)
+      .first()
+      .type(Cypress.env('PASSWORD'))
+      .should('have.value', Cypress.env('PASSWORD'));
 
     cy.contains('Acessar').click();
 
     cy.url().should('include', '/home');
   });
 
-  it.only('Login Incorreto', () => {
-    inputsForm
-      .email()
-      .type('testeuser@teste.com')
-      .should('have.value', 'testeuser@teste.com');
-    inputsForm.password().type('12345').should('have.value', '12345');
+  it('Login Incorreto', () => {
+    cy.get(element.input_email)
+      .type(Cypress.env('EMAIL'))
+      .should('have.value', Cypress.env('EMAIL'));
+    cy.get(element.input_password)
+      .type(Cypress.env('PASSWORD_INVALIDO'))
+      .should('have.value', Cypress.env('PASSWORD_INVALIDO'));
 
     cy.contains('Acessar').click();
 

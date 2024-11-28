@@ -1,11 +1,5 @@
 /// <reference types="Cypress" />
-
-const inputsForm = {
-  email: () => cy.get('input[name="email"]').last(),
-  name: () => cy.get('input[name="name"]'),
-  password: () => cy.get('input[name="password"]').last(),
-  passwordConfirmation: () => cy.get('input[name=passwordConfirmation]'),
-};
+const element = require('../../fixtures/registerUser.json');
 
 describe('Registro de usuário', () => {
   beforeEach(() => {
@@ -15,23 +9,24 @@ describe('Registro de usuário', () => {
     cy.get('@btnRegister').click();
   });
 
-  it.only('Registro de usuário com sucesso', () => {
-    inputsForm
-      .email()
-      .type('testeuser@teste.com', { force: true })
-      .should('have.value', 'testeuser@teste.com');
-    inputsForm
-      .name()
-      .type('Usuário Teste 1', { force: true })
-      .should('have.value', 'Usuário Teste 1');
-    inputsForm
-      .password()
-      .type('1234', { force: true })
-      .should('have.value', '1234');
-    inputsForm
-      .passwordConfirmation()
-      .type('1234', { force: true })
-      .should('have.value', '1234');
+  it('Registro de usuário com sucesso', () => {
+    cy.get(element.input_email)
+      .last()
+      .type(Cypress.env('EMAIL'), { force: true })
+      .should('have.value', Cypress.env('EMAIL'));
+
+    cy.get(element.input_name)
+      .type(Cypress.env('NOME_USUARIO'), { force: true })
+      .should('have.value', Cypress.env('NOME_USUARIO'));
+
+    cy.get(element.input_password)
+      .last()
+      .type(Cypress.env('PASSWORD'), { force: true })
+      .should('have.value', Cypress.env('PASSWORD'));
+
+    cy.get(element.input_password_confirmation)
+      .type(Cypress.env('PASSWORD'), { force: true })
+      .should('have.value', Cypress.env('PASSWORD'));
 
     cy.get('#toggleAddBalance').click({ force: true });
 
@@ -41,10 +36,9 @@ describe('Registro de usuário', () => {
   });
 
   it('Registro de usuário sem preenchimento de campos obrigatórios', () => {
-    inputsForm
-      .name()
-      .type('Usuário Teste 2', { force: true })
-      .should('have.value', 'Usuário Teste 2');
+    cy.get(element.input_name)
+      .type(Cypress.env('NOME_USUARIO'), { force: true })
+      .should('have.value', Cypress.env('NOME_USUARIO'));
 
     cy.get('#toggleAddBalance').click({ force: true });
 
@@ -58,22 +52,23 @@ describe('Registro de usuário', () => {
   });
 
   it('Registro de usuário com formato de e-mail invalido', () => {
-    inputsForm
-      .email()
-      .type('testeuser.com', { force: true })
-      .should('have.value', 'testeuser.com');
-    inputsForm
-      .name()
-      .type('Usuário Teste 3', { force: true })
-      .should('have.value', 'Usuário Teste 3');
-    inputsForm
-      .password()
-      .type('12345', { force: true })
-      .should('have.value', '12345');
-    inputsForm
-      .passwordConfirmation()
-      .type('12345', { force: true })
-      .should('have.value', '12345');
+    cy.get(element.input_email)
+      .last()
+      .type(Cypress.env('EMAIL_INVALIDO'), { force: true })
+      .should('have.value', Cypress.env('EMAIL_INVALIDO'));
+
+    cy.get(element.input_name)
+      .type(Cypress.env('NOME_USUARIO'), { force: true })
+      .should('have.value', Cypress.env('NOME_USUARIO'));
+
+    cy.get(element.input_password)
+      .last()
+      .type(Cypress.env('PASSWORD'), { force: true })
+      .should('have.value', Cypress.env('PASSWORD'));
+
+    cy.get(element.input_password_confirmation)
+      .type(Cypress.env('PASSWORD'), { force: true })
+      .should('have.value', Cypress.env('PASSWORD'));
 
     cy.contains('Cadastrar').click({ force: true });
 
