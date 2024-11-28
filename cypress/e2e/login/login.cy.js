@@ -21,9 +21,11 @@ describe('Login do sistema', () => {
 
   it('Login Incorreto', () => {
     cy.get(element.input_email)
+      .first()
       .type(Cypress.env('EMAIL'))
       .should('have.value', Cypress.env('EMAIL'));
     cy.get(element.input_password)
+      .first()
       .type(Cypress.env('PASSWORD_INVALIDO'))
       .should('have.value', Cypress.env('PASSWORD_INVALIDO'));
 
